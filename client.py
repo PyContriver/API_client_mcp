@@ -1,7 +1,9 @@
 import asyncio
+import os
 from fastmcp import Client
 
-client = Client("/Users/siddasha/mcp_test/test/testmcp.py")
+mcp_file_path = os.environ.get("server_file_path")
+client = Client(mcp_file_path)
 
 async def call_tool(name: str):
     async with client:
